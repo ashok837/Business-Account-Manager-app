@@ -1,0 +1,52 @@
+# Self-hosted deployment option: MySQL server + backend API in containers.
+#
+# Usage:
+#   cp backend/.env.example backend/.env.docker   (then edit secrets below)
+#   docker compose up --build -d
+#   docker compose exec backend python seed.py    (optional demo data)
+#
+# The frontend is NOT included here - build it separately with
+# `npm run build` in frontend/ and serve the static dist/ folder with any
+# web server (nginx, Caddy, S3+CloudFront, Vercel, Netlify, etc.), pointed
+# at this API's public URL via VITE_API_URL.
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: smb_db
+      MYSQL_USER: smb_user
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_this_password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change_this_root_password}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-change_this_root_password}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      ENVIRONMENT: production
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in a .env file before starting}
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
+      REFRESH_TOKEN_EXPIRE_DAYS: 14
+      MAX_FAILED_LOGIN_ATTEMPTS: 5
+      LOCKOUT_MINUTES: 15
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173}
+      DATABASE_URL: mysql+pymysql://smb_user:${MYSQL_PASSWORD:-change_this_password}@mysql:3306/smb_db
+    ports:
+      - "8000:8000"
+
+volumes:
+  mysql_data:

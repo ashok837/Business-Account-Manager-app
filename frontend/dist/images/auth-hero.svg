@@ -1,0 +1,34 @@
+<svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Business analytics dashboard illustration">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818cf8" stop-opacity=".55"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter>
+  </defs>
+  <rect x="60" y="30" width="400" height="270" rx="20" fill="#1e1b4b" stroke="#ffffff22" filter="url(#sh)"/>
+  <rect x="60" y="30" width="400" height="38" rx="20" fill="#ffffff0d"/>
+  <circle cx="86" cy="49" r="5" fill="#f87171"/><circle cx="104" cy="49" r="5" fill="#fbbf24"/><circle cx="122" cy="49" r="5" fill="#34d399"/>
+  <rect x="80" y="86" width="108" height="64" rx="12" fill="#ffffff12"/>
+  <rect x="94" y="100" width="40" height="7" rx="3.5" fill="#c7d2fe"/>
+  <text x="94" y="136" font-family="Manrope,Segoe UI,sans-serif" font-weight="800" font-size="20" fill="#fff">₹4.82L</text>
+  <rect x="200" y="86" width="108" height="64" rx="12" fill="#ffffff12"/>
+  <rect x="214" y="100" width="46" height="7" rx="3.5" fill="#c7d2fe"/>
+  <text x="214" y="136" font-family="Manrope,Segoe UI,sans-serif" font-weight="800" font-size="20" fill="#34d399">+18%</text>
+  <rect x="320" y="86" width="120" height="64" rx="12" fill="#ffffff12"/>
+  <rect x="334" y="100" width="34" height="7" rx="3.5" fill="#c7d2fe"/>
+  <text x="334" y="136" font-family="Manrope,Segoe UI,sans-serif" font-weight="800" font-size="20" fill="#fff">248</text>
+  <rect x="80" y="164" width="228" height="120" rx="12" fill="#ffffff0f"/>
+  <path d="M96 262 L134 236 L168 248 L206 208 L244 222 L292 186 L292 270 L96 270Z" fill="url(#g2)"/>
+  <path d="M96 262 L134 236 L168 248 L206 208 L244 222 L292 186" fill="none" stroke="url(#g1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="292" cy="186" r="5" fill="#fff" stroke="#818cf8" stroke-width="3"/>
+  <rect x="320" y="164" width="120" height="120" rx="12" fill="#ffffff0f"/>
+  <rect x="336" y="236" width="14" height="32" rx="4" fill="#818cf8"/><rect x="358" y="214" width="14" height="54" rx="4" fill="#a78bfa"/>
+  <rect x="380" y="226" width="14" height="42" rx="4" fill="#818cf8"/><rect x="402" y="190" width="14" height="78" rx="4" fill="#34d399"/>
+  <g filter="url(#sh)"><rect x="14" y="214" width="150" height="62" rx="14" fill="#fff"/>
+  <circle cx="44" cy="245" r="15" fill="#ecfdf3"/><path d="M37 246 l5 5 l9 -11" fill="none" stroke="#12b76a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="68" y="241" font-family="DM Sans,Segoe UI,sans-serif" font-weight="700" font-size="12" fill="#101828">Payment received</text>
+  <text x="68" y="259" font-family="DM Sans,Segoe UI,sans-serif" font-size="11" fill="#667085">₹12,450 · UPI</text></g>
+  <g filter="url(#sh)"><rect x="372" y="14" width="140" height="52" rx="14" fill="#fff"/>
+  <circle cx="400" cy="40" r="14" fill="#eef2ff"/><rect x="393" y="34" width="14" height="12" rx="2.5" fill="#4f46e5"/>
+  <text x="424" y="37" font-family="DM Sans,Segoe UI,sans-serif" font-weight="700" font-size="12" fill="#101828">New order</text>
+  <text x="424" y="53" font-family="DM Sans,Segoe UI,sans-serif" font-size="11" fill="#667085">#1042 · Pending</text></g>
+</svg>
